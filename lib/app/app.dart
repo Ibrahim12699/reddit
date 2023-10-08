@@ -31,7 +31,6 @@ class MyApp extends StatelessWidget {
         builder: (context, state) {
           return MaterialApp(
             title: 'Reddit Clone',
-            // navigatorKey: navigatorKey,
             localizationsDelegates: const [
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
@@ -39,15 +38,8 @@ class MyApp extends StatelessWidget {
             ],
             debugShowCheckedModeBanner: false,
             onGenerateRoute: routeGenerator.getRoute,
-
             darkTheme: kDarkTheme,
             themeMode: ThemeMode.dark,
-            // home: BlocProvider(
-            //   create: (context) => AuthCubit(getIt()),
-            //   child: PhoneAuthView(),
-            // ),
-            // darkTheme: MyThemes.buyerTheme,
-
             initialRoute: Routes.splashRoute,
           );
         },
