@@ -1,0 +1,54 @@
+name: reddit
+description: A new Flutter project.
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.2 <4.0.0'
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  freezed: ^2.4.3
+  freezed_annotation: ^2.4.1
+  get_it: ^7.6.4
+  shimmer: ^3.0.0
+  flutter_screenutil: ^5.9.0
+  flutter_bloc: ^8.1.3
+  bloc: ^8.1.2
+  build_runner: ^2.4.6
+  lottie: ^2.6.0
+  video_player: ^2.7.2
+  flutter_svg: ^2.0.7
+  sliding_up_panel: ^2.0.0+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.3
+
+
+flutter:
+
+
+  uses-material-design: true
+
+  assets:
+    - assets/svg/
+    - assets/images/
+    - assets/lottie/
+    - assets/videos/
+
