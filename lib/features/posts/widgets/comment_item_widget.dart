@@ -28,7 +28,7 @@ class _CommentItemWidgetState extends State<CommentItemWidget> {
     return _buildComment(widget.model);
   }
 
-  _buildComment(CommentModel model) {
+  Widget _buildComment(CommentModel model) {
     return Column(
       children: [
         _buildReplay(model),
@@ -36,7 +36,7 @@ class _CommentItemWidgetState extends State<CommentItemWidget> {
     );
   }
 
-  _buildReplay(CommentModel model) {
+  Widget _buildReplay(CommentModel model) {
     return Column(
       children: [
         _buildBody(model),
