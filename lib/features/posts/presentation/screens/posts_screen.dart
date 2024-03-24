@@ -6,7 +6,7 @@ import 'package:reddit/core/resources/assets_manager.dart';
 import 'package:reddit/core/resources/dummy_data.dart';
 import 'package:reddit/features/posts/logic/cubit/post_cubit.dart';
 import 'package:reddit/features/posts/logic/cubit/post_state.dart';
-import 'package:reddit/features/posts/widgets/video_post_widget.dart';
+import 'package:reddit/features/posts/presentation/widgets/video_post_widget.dart';
 
 class PostsScreen extends StatefulWidget {
   const PostsScreen({super.key});
@@ -19,7 +19,6 @@ class _PostsScreenState extends State<PostsScreen> {
   bool showControllers = true;
   bool isBottomSheetOpen = false;
 
-  // double _viewHeight = 1.sh;
 
   @override
   Widget build(BuildContext context) {
@@ -55,14 +54,14 @@ class _PostsScreenState extends State<PostsScreen> {
 
   Widget _buildVideoListView() {
     return PageView.builder(
-      itemCount: videoModelList.length,
+      itemCount: videosList.length,
       scrollDirection: Axis.vertical,
       physics: isBottomSheetOpen
           ? const NeverScrollableScrollPhysics()
           : const AlwaysScrollableScrollPhysics(),
       itemBuilder: (context, index) {
         return VideoPostWidget(
-          model: videoModelList[index],
+          model: videosList[index],
         );
       },
     );

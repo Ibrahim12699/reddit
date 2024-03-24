@@ -11,47 +11,54 @@ CategoryModel categoryModel = CategoryModel(
   image:
       'https://styles.redditmedia.com/t5_363r3/styles/communityIcon_8ve5xewye8461.png?width=256&s=a82425e9718e43411556f8fd9732a80b55eb478d',
 );
-List<VideoModel> videoModelList = [
+List<VideoModel> videosList = [
   VideoModel(
     id: '1',
-    title: 'In the 1970s, North Korea ordered 1,000 Volvo cars from Sweden, as a response to its emerging economy. ',
+    title: 'Footballer for Liverpool FC. '
+        '\n'
+        'Egyptian Arabic: born 15 June 1992. He plays for Premier League club Liverpool and the Egypt national team. He plays as a forward.'
+        '\n'
+        'Egyptian King. YNWA. #LFC #YNWA #UCL #PL #EGY #ASRoma #CFC #FCBasel #ChelseaFC #Roma #LiverpoolFC #Egypt #Salah #MoSalah #MohamedSalah #Liverpool',
     videoUrl: AssetsManager.video1,
-    commentsCount: "798",
-    likesCount: "2.8k",
+    commentsCount: "2.8k",
+    likesCount: "1.4m",
     voteType: VoteType.none,
     author: AuthorModel(
       id: '1',
-      name: 'John Doe',
+      name: 'Mo Salah',
       avatar:
-          'https://cdn.pixabay.com/photo/2018/02/16/14/38/portrait-3157821_1280.jpg',
+          'https://scontent.fcai20-2.fna.fbcdn.net/v/t39.30808-6/415112630_968953824589575_8956224801862747014_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=wEFhGMFnD8cAX8DuNDE&_nc_ht=scontent.fcai20-2.fna&oh=00_AfDN0vkgh4ltemEqt_A8Ix-BSV2gPbqW92KfsaS1wJhonA&oe=66057D47',
     ),
   ),
   VideoModel(
     id: '2',
-    title: 'What is your favorite and least favorite elements in skating? (Aesthetically/as a fan)',
+    title: 'Mamdouh Mohammed Hassan Elssbiay'
+        '\n'
+        'born 16 September 1984, is an Egyptian IFBB Pro professional bodybuilder. He is a two time Mr. Olympia champion, winning in 2020 and 2021.',
     videoUrl: AssetsManager.video2,
     commentsCount: "255",
     likesCount: "50k",
     voteType: VoteType.none,
     author: AuthorModel(
       id: '1',
-      name: 'Micheal',
+      name: 'Big Ramy',
       avatar:
-          'https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358__480.jpg',
+          'https://scontent-hbe1-1.xx.fbcdn.net/v/t1.6435-9/126295867_222260759259553_406677236625263520_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=qRqh5xzlQHYAX-knpBM&_nc_ht=scontent-hbe1-1.xx&oh=00_AfCUrBFSm5yfbehh4LMu-VGC5ayqenD8z6xSWNGXGfg3eg&oe=662752BC',
     ),
   ),
   VideoModel(
     id: '3',
-    title: 'Playing the keyboard - good choice of instrument?',
+    title:
+        'Al-Ka\'ba al-Musharrafa is a stone building at the center of Islam\'s most important mosque and holiest site, the Masjid al-Haram in Mecca, Saudi Arabia. It is considered by Muslims to be the Bayt Allah',
     videoUrl: AssetsManager.video3,
     commentsCount: "999",
     likesCount: "30k",
     voteType: VoteType.none,
     author: AuthorModel(
       id: '1',
-      name: 'Julia Morgan',
+      name: 'The Kaaba',
       avatar:
-          'https://cdn.pixabay.com/photo/2018/01/06/09/25/hijab-3064633_1280.jpg',
+          'https://upload.wikimedia.org/wikipedia/commons/f/f3/The_Blackstone.jpg',
     ),
   ),
 ];

@@ -10,7 +10,7 @@ class PostRepo {
     required VideoModel model,
     required VoteType newVote,
   }) {
-    for (var element in videoModelList) {
+    for (var element in videosList) {
       if (element.id == model.id) {
         if (model.voteType == newVote) {
           model.voteType = VoteType.none;

@@ -48,7 +48,6 @@ flutter:
 
   assets:
     - assets/svg/
-    - assets/images/
     - assets/lottie/
     - assets/videos/
 

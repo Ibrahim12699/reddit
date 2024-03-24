@@ -8,9 +8,9 @@ import 'package:reddit/core/resources/route_manager.dart';
 import 'package:reddit/features/posts/data/models/video_model.dart';
 import 'package:reddit/features/posts/logic/cubit/post_cubit.dart';
 import 'package:reddit/features/posts/logic/cubit/post_state.dart';
-import 'package:reddit/features/posts/widgets/add_comment_widget.dart';
-import 'package:reddit/features/posts/widgets/comment_filter_bottom_sheet.dart';
-import 'package:reddit/features/posts/widgets/comment_item_widget.dart';
+import 'package:reddit/features/posts/presentation/widgets/add_comment_widget.dart';
+import 'package:reddit/features/posts/presentation/widgets/comment_filter_bottom_sheet.dart';
+import 'package:reddit/features/posts/presentation/widgets/comment_item_widget.dart';
 
 class CommentsBottomSheetWidget extends StatefulWidget {
   const CommentsBottomSheetWidget({

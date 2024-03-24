@@ -20,7 +20,7 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
     return _buildBody();
   }
 
-  _buildBody() {
+  Widget _buildBody() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 4.h, vertical: 10.h),
       decoration: BoxDecoration(
@@ -49,7 +49,7 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
     );
   }
 
-  _addCommentWidget() {
+  Widget _addCommentWidget() {
     return Expanded(
       child: Row(children: [
         Expanded(
@@ -72,7 +72,7 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
     );
   }
 
-  _buildImageButton() {
+  Widget _buildImageButton() {
     return InkWell(
       onTap: () {},
       child: SvgPicture.asset(
@@ -111,6 +111,16 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
     );
   }
 
+  Widget _buildFocusLayout() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        _buildImageButton(),
+        _buildReplyButton(context),
+      ],
+    );
+  }
+
   void _onCommentChanged(String value) {
     if (value.isNotEmpty) {
       setState(() {
@@ -121,15 +131,5 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
         enableReplyButton = false;
       });
     }
-  }
-
-  _buildFocusLayout() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        _buildImageButton(),
-        _buildReplyButton(context),
-      ],
-    );
   }
 }

@@ -11,7 +11,7 @@ import 'package:reddit/features/posts/data/models/video_model.dart';
 import 'package:reddit/features/posts/data/models/vote_type.dart';
 import 'package:reddit/features/posts/logic/cubit/post_cubit.dart';
 import 'package:reddit/features/posts/logic/cubit/post_state.dart';
-import 'package:reddit/features/posts/widgets/comments_bottom_sheet_widget.dart';
+import 'package:reddit/features/posts/presentation/widgets/comments_bottom_sheet_widget.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPostWidget extends StatefulWidget {
@@ -73,7 +73,6 @@ class _VideoPostWidgetState extends State<VideoPostWidget> {
                 isExpanded: isExpanded,
                 height: bottomSheetHeight,
                 onExpandTap: () {
-                  log('onExpandTap $isExpanded');
                   setState(() {
                     if (isExpanded) {
                       bodyHeight = 0.4.sh;
@@ -238,12 +237,7 @@ class _VideoPostWidgetState extends State<VideoPostWidget> {
 
   Widget _buildDislikeButton() {
     return IconButton(
-      onPressed: () {
-        RouteGenerator.postCubit.voteVideo(
-          model: _model!,
-          newVote: VoteType.down,
-        );
-      },
+      onPressed: _onDislikePressed,
       icon: SvgPicture.asset(
         _model?.voteType == VoteType.down
             ? AssetsManager.arrowDownFill
@@ -266,10 +260,7 @@ class _VideoPostWidgetState extends State<VideoPostWidget> {
 
   Widget _buildCommentIcon() {
     return IconButton(
-      onPressed: () {
-        RouteGenerator.postCubit.currentVideoModel = _model;
-        RouteGenerator.postCubit.showCommentsBottomSheet(true);
-      },
+      onPressed: _onCommentPressed,
       icon: SvgPicture.asset(
         AssetsManager.comment,
         width: 20.w,
@@ -324,6 +315,7 @@ class _VideoPostWidgetState extends State<VideoPostWidget> {
       clipBehavior: Clip.antiAlias,
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
+        color: Colors.grey,
       ),
       child: Image.network(
         _model?.author?.avatar ?? '',
@@ -333,27 +325,40 @@ class _VideoPostWidgetState extends State<VideoPostWidget> {
   }
 
   Widget _buildVideoTitle() {
-    return Row(
-      children: [
-        Flexible(
-          child: RichText(
-            text: TextSpan(
-              text: _model?.title ?? '',
-              recognizer: TapGestureRecognizer()
-                ..onTap = () {
-                  setState(() {
-                    collapseText = !collapseText;
-                  });
-                },
-              style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: collapseText
+            ? null
+            : [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.15),
+                  blurRadius: 2,
+                  spreadRadius: 1,
+                ),
+              ],
+      ),
+      child: Row(
+        children: [
+          Flexible(
+            child: RichText(
+              text: TextSpan(
+                text: _model?.title ?? '',
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    setState(() {
+                      collapseText = !collapseText;
+                    });
+                  },
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+              maxLines: collapseText ? 2 : 100,
+              overflow: TextOverflow.ellipsis,
             ),
-            maxLines: collapseText ? 2 : 100,
-            overflow: TextOverflow.ellipsis,
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -462,7 +467,7 @@ class _VideoPostWidgetState extends State<VideoPostWidget> {
     );
   }
 
-  _buildPlayButtonCircle() {
+  Widget _buildPlayButtonCircle() {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.1),
@@ -529,6 +534,18 @@ class _VideoPostWidgetState extends State<VideoPostWidget> {
     } catch (e, s) {
       log('Error initializing video player: $e , $s');
     }
+  }
+
+  void _onDislikePressed() {
+    RouteGenerator.postCubit.voteVideo(
+      model: _model!,
+      newVote: VoteType.down,
+    );
+  }
+
+  void _onCommentPressed() {
+    RouteGenerator.postCubit.currentVideoModel = _model;
+    RouteGenerator.postCubit.showCommentsBottomSheet(true);
   }
 
   @override

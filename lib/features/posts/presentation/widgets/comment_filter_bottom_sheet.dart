@@ -61,7 +61,7 @@ class _CommentFilterBottomSheetState extends State<CommentFilterBottomSheet> {
     );
   }
 
-  _buildItem({required CommentFilterModel model}) {
+  Widget _buildItem({required CommentFilterModel model}) {
     return InkWell(
         onTap: () {
           RouteGenerator.postCubit.setCommentFilter(model);
@@ -78,7 +78,7 @@ class _CommentFilterBottomSheetState extends State<CommentFilterBottomSheet> {
         ));
   }
 
-  _buildDivider() {
+  Widget _buildDivider() {
     return Container(
       height: 1,
       width: 1.sw,
@@ -86,7 +86,7 @@ class _CommentFilterBottomSheetState extends State<CommentFilterBottomSheet> {
     );
   }
 
-  _buildCloseButton() {
+  Widget _buildCloseButton() {
     return InkWell(
       onTap: () {
         Navigator.pop(context);
@@ -112,7 +112,7 @@ class _CommentFilterBottomSheetState extends State<CommentFilterBottomSheet> {
     );
   }
 
-  _buildIcon(CommentFilterModel model) {
+  Widget _buildIcon(CommentFilterModel model) {
     return SvgPicture.asset(
       model.icon ?? '',
       height: 20.w,

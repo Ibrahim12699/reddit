@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reddit/core/business_logic/cubit/global_cubit.dart';
 import 'package:reddit/core/resources/injection.dart';
 import 'package:reddit/features/posts/logic/cubit/post_cubit.dart';
-import 'package:reddit/features/posts/screens/posts_screen.dart';
-import 'package:reddit/features/splash/screens/splash_screen.dart';
+import 'package:reddit/features/posts/presentation/screens/posts_screen.dart';
+import 'package:reddit/features/splash/presentation/screens/splash_screen.dart';
 
 class Routes {
   static const String splashRoute = '/splashRoute';

@@ -5,7 +5,7 @@ import 'package:reddit/core/resources/app_contant.dart';
 import 'package:reddit/core/resources/strings_manger.dart';
 import 'package:reddit/features/posts/data/models/comment_model.dart';
 import 'package:reddit/features/posts/data/models/comment_option_model.dart';
-import 'package:reddit/features/posts/widgets/delete_comment_dialog.dart';
+import 'package:reddit/features/posts/presentation/widgets/delete_comment_dialog.dart';
 
 class CommentOptionsBottomSheet extends StatefulWidget {
   const CommentOptionsBottomSheet({super.key, required this.model});

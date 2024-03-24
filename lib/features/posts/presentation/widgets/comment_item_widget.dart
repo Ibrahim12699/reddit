@@ -6,7 +6,7 @@ import 'package:reddit/core/resources/route_manager.dart';
 import 'package:reddit/core/resources/strings_manger.dart';
 import 'package:reddit/features/posts/data/models/comment_model.dart';
 import 'package:reddit/features/posts/data/models/vote_type.dart';
-import 'package:reddit/features/posts/widgets/comment_options_bottom_sheet.dart';
+import 'package:reddit/features/posts/presentation/widgets/comment_options_bottom_sheet.dart';
 
 class CommentItemWidget extends StatefulWidget {
   const CommentItemWidget({super.key, required this.model});
